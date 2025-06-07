@@ -1,0 +1,40 @@
+# Python bytecode and cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# IDE and editor directories
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project-specific generated files
+# --- IMPORTANT: These are the files our application creates! ---
+*.db
+*.log
+*.csv
+
+# It's also good practice to ignore the default output PGN directory
+# if you always name it the same way, or add specific output files.
+# For example:
+# annotated_games.pgn
+# reports/
+
+# Distribution / packaging
+.eggs/
+*.egg-info/
+dist/
+build/
+*.egg
+
+# OS-generated files
+.DS_Store
+Thumbs.db

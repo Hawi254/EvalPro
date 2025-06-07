@@ -1,0 +1,26 @@
+# chess_analyzer_project/chess_analyzer/engine/stockfish.pyi
+"""
+Type stubs for the 'python-stockfish' library.
+This provides type information for static analysis tools like mypy.
+"""
+from typing import Any, Dict, List, Optional, Union
+from subprocess import Popen
+
+class StockfishException(Exception): ...
+
+class Stockfish:
+    _subprocess: Optional[Popen[str]]
+    
+    def __init__(
+        self,
+        path: str,
+        depth: int = 15,
+        parameters: Optional[Dict[str, Any]] = None
+    ): ...
+    
+    def get_stockfish_major_version(self) -> Optional[Union[str, int]] : ...
+    def is_fen_valid(self, fen_position: str) -> bool: ...
+    def set_fen_position(self, fen_position: str, send_ucinewgame: bool = True) -> None: ...
+    def set_depth(self, depth: int) -> None: ...
+    def get_top_moves(self, num_top_moves: int) -> Optional[List[Dict[str, Union[str, int]]]]: ...
+    def update_engine_parameters(self, parameters: Dict[str, Any]) -> None: ...
